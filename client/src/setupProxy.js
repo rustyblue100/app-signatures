@@ -3,7 +3,7 @@ module.exports = function (app) {
   app.use(
     "/employes",
     createProxyMiddleware({
-      target: "http://localhost:5000",
+      target: "http://localhost:5001",
       changeOrigin: true,
     })
   );
@@ -11,7 +11,7 @@ module.exports = function (app) {
   app.use(
     "/users",
     createProxyMiddleware({
-      target: "http://localhost:5000",
+      target: "http://localhost:5001",
       changeOrigin: true,
     })
   );

@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
-import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
 import axios from "axios";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import ReactSearchBox from "react-search-box";
-import UserContext from "../../context/userContext";
 import avatarDefault from "../../avatar-default.svg";
+import UserContext from "../../context/userContext";
 
 function EmployeList(props) {
   const [employeData, setEmployeData] = useState([]);
@@ -43,9 +42,10 @@ function EmployeList(props) {
   }
 
   const ListEmployes = (_id) => {
-    return (nomValue !== ""
-      ? employeData.filter((nom) => nom.value === nomValue)
-      : employeData
+    return (
+      nomValue !== ""
+        ? employeData.filter((nom) => nom.value === nomValue)
+        : employeData
     )
       .slice(0)
       .reverse()
@@ -77,13 +77,10 @@ function EmployeList(props) {
           <td style={{ fontSize: "14px" }} className="align-middle">
             {employe.telephone}
           </td>
-          {/*           <td style={{ fontSize: "14px" }} className="align-middle">
-            {employe.linkedin}
-          </td> */}
+
           <td
-            style={{ fontSize: "14px" }}
+            style={{ fontSize: "14px", border: "none" }}
             className="align-middle d-flex mt-3"
-            style={{ border: "none" }}
           >
             <Link
               to={{
@@ -127,12 +124,12 @@ function EmployeList(props) {
         <p className="mt-5">Loading...</p>
       ) : (
         <>
-          <h1 className="mt-5 mb-2 text-center">Team</h1>
+          <h1 className="mt-5 mb-2 text-center">Employés</h1>
 
           <div className=" mt-4 pb-3 ">
             <span className="text-info">+</span>{" "}
             <Link className="text-info" to="/ajouter-employe">
-              Add a team member
+              Ajouter un employé
             </Link>
           </div>
 
@@ -151,11 +148,11 @@ function EmployeList(props) {
             <thead>
               <tr>
                 <th className="align-middle">Avatar</th>
-                <th className="align-middle">First Name</th>
-                <th className="align-middle">Last Name</th>
-                <th className="align-middle">Email</th>
+                <th className="align-middle">Prénom</th>
+                <th className="align-middle">Npm</th>
+                <th className="align-middle">Courriel</th>
                 <th style={{ width: "14%" }} className="align-middle">
-                  Job title
+                  Fonction
                 </th>
                 {/*           <th tyle={{ width: "" }}>Role FR</th> */}
                 <th style={{ width: "12%" }} className="align-middle">

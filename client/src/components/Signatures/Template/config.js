@@ -10,14 +10,14 @@ const Config = {
   lineHeightDimension: "100%",
   msoLine: "exactly",
   compagnieName: "lift",
-  url: "https://liftinnovate.com/",
+  url: "",
   imageUrl:
-    "https://res.cloudinary.com/lift/image/upload/v1598378191/signatures/logos/logo_LIFT-96_d4xa4h.png",
+    "https://res.cloudinary.com/folospot/image/upload/v1649260231/app-signatures/FOlospot_mhuhfp.png",
   imgSizeW: "85px",
   imgSizeH: "30px",
   spacing: "16px",
   linkedin:
-    "https://res.cloudinary.com/lift/image/upload/v1598378110/signatures/logos/Linkedin_lift-96_acunt7.png",
+    "https://res.cloudinary.com/folospot/image/upload/v1649259116/app-signatures/Linkedin_lift-96_acunt7_alde46.png",
 };
 
 export default Config;

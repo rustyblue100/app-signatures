@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import avatarDefault from "../../avatar-default.svg";
-import { useHistory, Link } from "react-router-dom";
 import UserContext from "../../context/userContext";
 
 function CreationEmploye(props) {
@@ -9,9 +9,7 @@ function CreationEmploye(props) {
   const [nom, setNomValue] = useState("");
   const [email, setEmailValue] = useState("");
   const [role, setRoleValue] = useState("");
-  /*  const [roleFr, setRoleFrValue] = useState(""); */
   const [telephone, setTelephoneValue] = useState("");
-  /*   const [linkedin, setLinkedinValue] = useState(""); */
   const [avatarValue, setAvatarValue] = useState(avatarDefault);
 
   const [imageUrl, setImageUrl] = useState(null);
@@ -31,7 +29,7 @@ function CreationEmploye(props) {
   const handleImageUpload = () => {
     const { files } = document.querySelector('input[type="file"]');
     const formData = new FormData();
-    const CLOUDINARY_UPLOAD_PRESET = "tdwt4k84";
+    const CLOUDINARY_UPLOAD_PRESET = process.env.CLOUDINARY_UPLOAD_PRESET;
     formData.append("file", files[0]);
     // replace this with your upload preset name
     formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
@@ -40,7 +38,10 @@ function CreationEmploye(props) {
       body: formData,
     };
     // replace cloudname with your Cloudinary cloud_name
-    fetch("https://api.cloudinary.com/v1_1/lift/image/upload", options)
+    fetch(
+      `https://api.cloudinary.com/v1_1/${process.env.CLOUDNAME}/image/upload`,
+      options
+    )
       .then((res) => res.json())
       .then((res) => {
         setImageUrl(res.secure_url);
@@ -80,9 +81,7 @@ function CreationEmploye(props) {
       nom,
       email,
       role,
-      /*       roleFr, */
       telephone,
-      /*       linkedin, */
       avatar: avatar !== "" ? avatar : avatarValue,
       value: preNom + " " + nom,
     };
@@ -113,7 +112,7 @@ function CreationEmploye(props) {
   return (
     <div className="container pb-5 ">
       <h1 className="mt-5 text-center">
-        {props.location.id ? `Edit team member` : `Add a team member`}
+        {props.location.id ? `modifier employé` : `Ajouter un employé`}
       </h1>
       <Link className="text-info" to={"/"}>
         <span>&#8592;</span>&nbsp;back
@@ -159,7 +158,7 @@ function CreationEmploye(props) {
           </main>
         </div>
         <div className="form-group">
-          <label htmlFor="exampleFormControlInput1">First Name</label>
+          <label htmlFor="exampleFormControlInput1">Prénom</label>
           <input
             value={preNom}
             onChange={(e) => setPreNomValue(e.target.value)}
@@ -170,7 +169,7 @@ function CreationEmploye(props) {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="exampleFormControlInput1">Last Name</label>
+          <label htmlFor="exampleFormControlInput1">Nom</label>
           <input
             value={nom}
             onChange={(e) => setNomValue(e.target.value)}
@@ -181,7 +180,7 @@ function CreationEmploye(props) {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="exampleFormControlInput1">Email</label>
+          <label htmlFor="exampleFormControlInput1">Courriel</label>
           <input
             value={email}
             onChange={(e) => setEmailValue(e.target.value)}
@@ -192,7 +191,7 @@ function CreationEmploye(props) {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="exampleFormControlInput1">Job title</label>
+          <label htmlFor="exampleFormControlInput1">Fonction</label>
           <input
             value={role}
             onChange={(e) => setRoleValue(e.target.value)}
@@ -202,17 +201,6 @@ function CreationEmploye(props) {
             placeholder="Director"
           />
         </div>
-        {/*         <div className="form-group">
-          <label htmlFor="exampleFormControlInput1">Role FR</label>
-          <input
-            value={roleFr}
-            onChange={(e) => setRoleFrValue(e.target.value)}
-            type="text"
-            className="form-control"
-            id="exampleFormControlInput1"
-            placeholder="Directeur"
-          />
-        </div> */}
 
         <div className="form-group">
           <label htmlFor="exampleFormControlInput1">Phone</label>
@@ -225,19 +213,9 @@ function CreationEmploye(props) {
             placeholder="(514) 777-7777"
           />
         </div>
-        {/*         <div className="form-group">
-          <label htmlFor="exampleFormControlInput1">Linkedin</label>
-          <input
-            value={linkedin}
-            onChange={(e) => setLinkedinValue(e.target.value)}
-            type="text"
-            className="form-control"
-            id="exampleFormControlInput1"
-            placeholder="https://www.linkedin.com/in/john-doe/"
-          />
-        </div> */}
+
         <button type="submit" className="btn btn-outline-success">
-          {props.location.id ? `Update` : `Add`}
+          {props.location.id ? `Modifier` : `Ajouter`}
         </button>
       </form>
     </div>

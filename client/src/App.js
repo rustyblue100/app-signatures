@@ -55,7 +55,7 @@ function App() {
         <Route path="/liste" exact component={ListeCompagnies} />
         <Route path="/signatures" component={Signatures} />
         <Route path="/login" exact component={Login} />
-        {/* <Route path="/register" exact component={Register} /> */}
+        <Route path="/register" exact component={Register} />
       </UserContext.Provider>
     </Router>
   );

@@ -29,8 +29,8 @@ function Signatures(props) {
           style={{
             marginLeft: 0,
           }}
-          src="https://res.cloudinary.com/lift/image/upload/c_scale,w_125/v1598287474/signatures/logos/logo_LIFT_jqscgp.png"
-          alt="Lift"
+          src="https://res.cloudinary.com/folospot/image/upload/v1649260231/app-signatures/FOlospot_mhuhfp.png"
+          alt="Folospot"
         />
       </div>
 
@@ -42,7 +42,7 @@ function Signatures(props) {
             className={"mb-2"}
             style={{ fontFamily: "Calibri", color: "#00313b" }}
           >
-            Write your first name
+            Écrivez-votre nom
           </h4>
 
           <Template />

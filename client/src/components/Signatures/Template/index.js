@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 import ReactSearchBox from "react-search-box";
-import { CopyBlock, dracula } from "react-code-blocks";
-import ReactDOMServer from "react-dom/server";
 import "../styles.css";
 import config from "./config";
 
@@ -110,7 +108,7 @@ const Template = ({}) => {
                       >
                         <a href={config.url}>
                           <img
-                            alt="https://liftinnovate.com/"
+                            alt="https://folospot.com/"
                             width={config.imgSizeW.replace("px", "")}
                             style={{
                               width: config.imgSizeW,
@@ -148,7 +146,7 @@ const Template = ({}) => {
                     }}
                     nosend="1"
                     border="0"
-                    src="https://res.cloudinary.com/lift/image/upload/v1598287487/signatures/misc/divider_LIFT_xso86w.png"
+                    src="https://res.cloudinary.com/folospot/image/upload/v1649263744/app-signatures/divider_LIFT_xso86w_suplqi.png"
                   />
                 </td>
                 <td
@@ -304,58 +302,6 @@ const Template = ({}) => {
                     )}
                     {console.log(employe.email)}
 
-                    {employe.email === "Jeff@liftinnovate.com" && (
-                      <tr height={config.spacing.replace("px", "")}>
-                        <td
-                          className="appleLinks"
-                          align="left"
-                          style={{
-                            msoLineHeightRule: config.msoLine,
-                            lineHeight: config.lineHeightDimension,
-                            textAlign: "left",
-                            textDecoration: "none",
-                            fontFamily: config.family,
-                            fontSize: config.fontSizeBody,
-                            color: config.secondaryColor,
-                          }}
-                        >
-                          <a
-                            className="appleLinks"
-                            href="http://jeffkaplan.com/"
-                            style={{
-                              color: config.secondaryColor,
-                              msoLineHeightRule: config.msoLine,
-                              lineHeight: config.lineHeightDimension,
-                              fontFamily: config.family,
-                              fontSize: config.fontSizeBody,
-                              textDecoration: "none",
-                            }}
-                            alt="http://jeffkaplan.com/"
-                          >
-                            <span
-                              className="appleLinks"
-                              style={{
-                                fontFamily: config.family,
-                                msoLineHeightRule: config.msoLine,
-                                lineHeight: config.lineHeightDimension,
-                                fontSize: config.fontSizeBody,
-                                color: config.secondaryColor,
-                                textDecoration: "none",
-                              }}
-                            >
-                              <font
-                                className="appleLinks"
-                                color={config.secondaryColor}
-                                text-decoration="none"
-                              >
-                                www.jeffkaplan.com
-                              </font>
-                            </span>
-                          </a>
-                        </td>
-                      </tr>
-                    )}
-
                     <tr height={config.spacing.replace("px", "")}>
                       <td
                         className="appleLinks"
@@ -372,7 +318,7 @@ const Template = ({}) => {
                       >
                         <a
                           className="appleLinks"
-                          href="https://liftinnovate.com/"
+                          href="https://folospot.com/"
                           style={{
                             color: config.secondaryColor,
                             msoLineHeightRule: config.msoLine,
@@ -381,7 +327,7 @@ const Template = ({}) => {
                             fontSize: config.fontSizeBody,
                             textDecoration: "none",
                           }}
-                          alt="https://liftinnovate.com/"
+                          alt="https://folospot.com/"
                         >
                           <span
                             style={{
@@ -398,7 +344,7 @@ const Template = ({}) => {
                               color={config.secondaryColor}
                               text-decoration="none"
                             >
-                              www.liftinnovate.com
+                              www.folospot.com
                             </font>
                           </span>
                         </a>
@@ -421,7 +367,7 @@ const Template = ({}) => {
                           <tr>
                             <td style={{ padding: "2px 6px 1px 0px" }}>
                               <a
-                                href="https://www.linkedin.com/company/liftinnovate/"
+                                href="https://www.linkedin.com/company/folospot/"
                                 style={{
                                   color: config.secondaryColor,
                                   fontFamily: config.family,
@@ -504,7 +450,7 @@ const Template = ({}) => {
   return (
     <>
       <ReactSearchBox
-        placeholder="Search..."
+        placeholder="Rechercher..."
         onChange={(value) => setNomValue(value)}
         data={employeData}
         callback={(record) => console.log(record)}
@@ -524,7 +470,7 @@ const Template = ({}) => {
               msUserSelect: "none",
             }}
           >
-            Copy and paste your signature in the reserved space of your mail
+            Copier et coller votre signature dans l'espace réservé de votre
             client.
             <br />
             <small>
@@ -532,42 +478,13 @@ const Template = ({}) => {
                 style={{ color: "#17a2b8" }}
                 href="https://blog.gimm.io/installing-email-signatures/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener nreferrer"
               >
-                ➝ How to install my signature?
+                ➝ Comment installer ma signature ?
               </a>
             </small>
           </h5>
-          {/*           <div class="form-check form-check-inline">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="inlineRadioOptions"
-              id="inlineRadio1"
-              value="desktop"
-              onClick={() => setLayoutValue("desktop")}
-              checked={layoutValue === "desktop"}
-            />
-            <label class="form-check-label" for="inlineRadio1">
-              desktop
-            </label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="inlineRadioOptions"
-              id="inlineRadio2"
-              onClick={() => setLayoutValue("mobile")}
-              value="mobile"
-              checked={layoutValue === "mobile"}
-            />
-            <label class="form-check-label" for="inlineRadio2">
-              mobile
-            </label>
-          </div>
-          <br />
-          <br /> */}
+
           <button
             style={{
               borderStyle: "none",
@@ -622,16 +539,6 @@ const Template = ({}) => {
           ) : (
             ""
           )}
-          {/*           {nomValue.length > 0 && renderHTML().length > 0 ? (
-            <CopyBlock
-              text={ReactDOMServer.renderToStaticMarkup(renderHTML())}
-              theme={dracula}
-              codeBlock
-              className={"codeBox"}
-            />
-          ) : (
-            ""
-          )} */}
         </div>
       </div>
     </>

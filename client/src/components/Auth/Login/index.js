@@ -43,7 +43,7 @@ const Login = () => {
       {tokenSession ? (
         <Link to={"/"} className="text-info">
           <h2 className="mb-4" style={{ textAlign: "center", fontWeight: 300 }}>
-            Re-enter session
+            Revenir à votre session d'utilisateur
           </h2>
         </Link>
       ) : (
