@@ -8,7 +8,7 @@ import UserContext from "../../context/userContext";
 function EmployeList(props) {
   const [employeData, setEmployeData] = useState([]);
   const [nomValue, setNomValue] = useState("");
-  const [state, setState] = React.useState(true);
+  const [state, setState] = useState(true);
 
   const { userData } = useContext(UserContext);
   const history = useHistory();
@@ -73,7 +73,7 @@ function EmployeList(props) {
           <td style={{ fontSize: "14px" }} className="align-middle">
             {employe.role}
           </td>
-          {/*      <td  style={{ fontSize: "14px" }} className="align-middle" >{employe.roleFr}</td> */}
+
           <td style={{ fontSize: "14px" }} className="align-middle">
             {employe.telephone}
           </td>
