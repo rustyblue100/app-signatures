@@ -149,7 +149,7 @@ function EmployeList(props) {
               <tr>
                 <th className="align-middle">Avatar</th>
                 <th className="align-middle">Prénom</th>
-                <th className="align-middle">Npm</th>
+                <th className="align-middle">Nom</th>
                 <th className="align-middle">Courriel</th>
                 <th style={{ width: "14%" }} className="align-middle">
                   Fonction
