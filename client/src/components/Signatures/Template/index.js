@@ -449,12 +449,12 @@ const Template = ({}) => {
 
   return (
     <>
-      {/*       <ReactSearchBox
+      <ReactSearchBox
         placeholder="Rechercher..."
         onChange={(value) => setNomValue(value)}
         data={employeData}
         callback={(record) => console.log(record)}
-      /> */}
+      />
 
       {console.log(employeData)}
 
