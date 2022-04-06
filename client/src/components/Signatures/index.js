@@ -6,7 +6,7 @@ import Template from "./Template";
 
 function Signatures(props) {
   const [employeData, setEmployeData] = useState([]);
-  const [state, setState] = React.useState(true);
+  const [state, setState] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {

@@ -9,7 +9,7 @@ const Config = {
   fontSizeBody: "9pt",
   lineHeightDimension: "100%",
   msoLine: "exactly",
-  compagnieName: "lift",
+  compagnieName: "folospot",
   url: "",
   imageUrl:
     "https://res.cloudinary.com/folospot/image/upload/v1649260231/app-signatures/FOlospot_mhuhfp.png",
