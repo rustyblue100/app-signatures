@@ -29,7 +29,8 @@ function CreationEmploye(props) {
   const handleImageUpload = () => {
     const { files } = document.querySelector('input[type="file"]');
     const formData = new FormData();
-    const CLOUDINARY_UPLOAD_PRESET = process.env.CLOUDINARY_UPLOAD_PRESET;
+    const CLOUDINARY_UPLOAD_PRESET =
+      process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET;
     formData.append("file", files[0]);
     // replace this with your upload preset name
     formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
@@ -39,7 +40,7 @@ function CreationEmploye(props) {
     };
     // replace cloudname with your Cloudinary cloud_name
     fetch(
-      `https://api.cloudinary.com/v1_1/${process.env.CLOUDNAME}/image/upload`,
+      `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDNAME}/image/upload`,
       options
     )
       .then((res) => res.json())
