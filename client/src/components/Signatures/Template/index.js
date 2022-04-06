@@ -74,11 +74,11 @@ const Template = ({}) => {
                         <img
                           alt={`${employe.preNom} ${employe.nom}`}
                           width="95"
-                          height="114"
+                          /*  height="114" */
                           style={{
                             width: "95px",
                             maxWidth: "95px",
-                            height: "114px",
+                            /*   height: "114px", */
                             display: "block",
                           }}
                           nosend="1"
