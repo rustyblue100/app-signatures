@@ -75,7 +75,6 @@ function CreationEmploye(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("nom: " + nom);
 
     const user = {
       preNom,
