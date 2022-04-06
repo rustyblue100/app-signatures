@@ -1,0 +1,73 @@
+code {
+  font-family: "Arial", sans-serif;
+}
+
+h1 {
+  font-size: 2.2rem !important;
+  font-weight: 300 !important;
+}
+
+.upload-form {
+  margin: 6rem 0;
+  text-align: center;
+  /*   max-width: 100vw;
+  min-height: 100vh;
+  max-height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-form .left-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 0.5px solid grey;
+}
+
+.upload-form .right-side {
+  border-left: 0.5px solid grey;
+}
+
+.upload-form .left-side,
+.upload-form .right-side {
+  height: 92px;
+  width: 100%;
+}
+
+.upload-form .left-side form {
+  height: fit-content;
+  background: white;
+  border: 1px solid grey;
+  border-radius: 4px;
+  width: 300px;
+  padding: 20px 10px;
+}
+
+.upload-form .left-side form input {
+  margin: 0 0 30px;
+  width: 200px;
+}
+
+.upload-form .left-side form .btn:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.upload-form .left-side form .btn.widget-btn {
+  margin-top: 15px;
+  background: #800080;
+  border: 1px solid #800080;
+  color: #ffffff;
+}
+
+.upload-form .left-side form .btn.widget-btn:hover {
+  margin-top: 15px;
+  background: #4b0082;
+  border: 1px solid #4b0082;
+  color: #ffffff;
+}
+
+.upload-form .right-side .displayed-image {
+  height: auto;
+}
