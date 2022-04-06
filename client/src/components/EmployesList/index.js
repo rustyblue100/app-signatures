@@ -32,8 +32,6 @@ function EmployeList(props) {
     fetchData();
   }, []);
 
-  console.log(employeData);
-
   function deleteFilm(id) {
     axios.delete("/employes/" + id).then((res) => {
       console.log("Employés deleted");
